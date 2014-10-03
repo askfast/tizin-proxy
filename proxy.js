@@ -10,6 +10,7 @@ router.get('/audio.wav', Parser.audio);
 router.get('/question', Parser.question);
 router.post('/question/hangup', Parser.hangup);
 app.use('/tizin', router);
+app.use(express.static(process.cwd() + '/public'));
 
 app.listen(PORT);
 console.log("Tizin proxy running on port: "+PORT);
